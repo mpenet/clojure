@@ -6589,6 +6589,7 @@
   false. Note that f is short-circuiting in that it will stop execution on the first
   argument that triggers a logical false result against the original predicates."
   {:added "1.3"}
+  ([] (constantly true))
   ([p]
      (fn ep1
        ([] true)
@@ -6629,6 +6630,7 @@
   logical false. Note that f is short-circuiting in that it will stop execution on the first
   argument that triggers a logical true result against the original predicates."
   {:added "1.3"}
+  ([] (constantly nil))
   ([p]
      (fn sp1
        ([] nil)

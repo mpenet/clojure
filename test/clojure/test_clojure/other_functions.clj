@@ -131,6 +131,8 @@
 ; every-pred
 (deftest test-every-pred
   (are [result expr] (= result expr)
+   ;; 0 pred
+   true    ((every-pred))
    ;; 1 pred
    true     ((every-pred even?))
    true     ((every-pred even?) 2)
@@ -231,6 +233,8 @@
 
 (deftest test-some-fn
   (are [result] (identity result)
+   ;; 0 pred
+   (not ((some-fn)))
    ;; 1 pred
    (not ((some-fn even?)))
    ((some-fn even?) 2)
